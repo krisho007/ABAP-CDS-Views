@@ -9,12 +9,11 @@ define view ZI_MM_DOM_FIXVAL
                                        and FixedValue.domvalue_l = ValueText.domvalue_l
                                        and FixedValue.as4local   = ValueText.as4local
 {
-  key FixedValue.domname    as DomainName,
-  key FixedValue.as4local   as Status,
   key FixedValue.domvalue_l as Low,
       ValueText.ddtext      as Text
 }
 
 where
+      FixedValue.domname = '<YOUR DOMAIN NAME'
       FixedValue.as4local  = 'A' --Active
   and ValueText.ddlanguage = $session.system_language 
